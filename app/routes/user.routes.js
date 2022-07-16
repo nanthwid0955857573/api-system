@@ -35,16 +35,19 @@ module.exports = function(app) {
 
   app.post(
     "/api/user/create",
-    [
-      verifySignUp.checkDuplicateUsernameOrEmail,
-      verifySignUp.checkRolesExisted
-    ],
+    // [
+    //   verifySignUp.checkDuplicateUsernameOrEmail,
+    //   verifySignUp.checkRolesExisted
+    // ],
     controller.create
   );
+  
+  // app.post("api/student/add",controller.create);
+
   app.get("/api/user/watch",controller.findAll);
 
   app.get("/api/user/search/:id", controller.findOne);
-
+ 
   app.put("/api/user/update/:id", controller.update);
 
   app.delete('/api/user/:id', function (req, res) {

@@ -1,11 +1,15 @@
 module.exports = (sequelize, Sequelize) => {
-    const student = sequelize.define("student", {
-       id:{
-           type: Sequelize.INTEGER,
-           primaryKey:true
-       },
-       s_id: {
-           type: Sequelize.STRING
+    const Student = sequelize.define("student", {
+        
+
+        id:{
+            type: Sequelize.INTEGER,
+            primaryKey:true,
+            autoIncrement: true,
+        },
+
+        s_id: {
+            type: Sequelize.STRING
        },
        s_major:{
         type: Sequelize.STRING
@@ -15,7 +19,20 @@ module.exports = (sequelize, Sequelize) => {
        },
        s_group:{
         type: Sequelize.STRING
+       },
+       s_name:{
+        type: Sequelize.STRING
+       },
+       s_lastname:{
+        type: Sequelize.STRING
+       },
+       createdAt:{
+        type:Sequelize.DATE
+       },
+       updatedAt:{
+        type:Sequelize.DATE
        }
+
     });
-    return student;
+    return Student;
 };
