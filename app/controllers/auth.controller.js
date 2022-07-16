@@ -2,6 +2,8 @@ const db = require("../models");
 const config = require("../config/auth.config");
 const User = db.user;
 const Role = db.role;
+const Student = db.role;
+
 
 const Op = db.Sequelize.Op;
 
@@ -80,8 +82,7 @@ exports.signin = (req, res) => {
           accessToken: token
         });
       });
-    })
-    .catch(err => {
+    }).catch(err => {
       res.status(500).send({ message: err.message });
     });
 };

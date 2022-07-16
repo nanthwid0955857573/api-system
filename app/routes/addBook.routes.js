@@ -1,4 +1,5 @@
-const controller = require("../controllers/add.controller");
+const controller = require("../controllers/addBook.controller");
+const { verifyAddBook } = require("../middleware");
 module.exports = function(app) {
     app.use(function(req, res, next) {
         res.header(
@@ -10,5 +11,5 @@ module.exports = function(app) {
         // body: arr
       }
       );
-    app.post("/api/student/add",controller.add);
+    app.post("/api/book/addBook",[verifyAddBook.checkDuplicateBook],controller.addBook);
 };

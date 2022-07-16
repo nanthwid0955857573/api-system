@@ -18,6 +18,6 @@ module.exports = function(app) {
     ],
     controller.signup
   );
-
+  // app.post("/api/student/add",controller.create);
   app.post("/api/auth/signin", controller.signin);
 };

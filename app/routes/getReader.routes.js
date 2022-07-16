@@ -6,9 +6,7 @@ module.exports = function(app) {
           "x-access-token, Origin, Content-Type, Accept",
         ); 
         next();
-        // json: true,
-        // body: arr
       }
       );
-    app.post("/api/student/add",controller.add);
+    app.get("/api/student/getReader",controller.getReader);
 };
