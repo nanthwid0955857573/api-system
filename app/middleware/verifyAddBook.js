@@ -1,7 +1,7 @@
 const db = require("../models");
 const Book = db.book;
  
-checkDuplicateBook = (req, res, next) => {
+  checkDuplicateBook = (req, res, next) => {
     Book.findOne({
         where: {
             b_id: req.body.b_id
@@ -11,7 +11,7 @@ checkDuplicateBook = (req, res, next) => {
 
         if (book) {
                 res.status(400).send({
-                  message: "Failed! Username is already in use!"
+                  message: "Failed! Book is duplicate!"
                 });
             return;
           }
